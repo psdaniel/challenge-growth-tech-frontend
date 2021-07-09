@@ -1,5 +1,6 @@
+import { Dashboard } from './domain/dashboard/dashboard'
 import './styles.css'
 
 export const App = () => {
-  return <h1>React TypeScript Template</h1>
+  return <Dashboard />
 }
