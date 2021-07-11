@@ -3,4 +3,25 @@
   padding: 0;
   text-decoration: none;
   outline: none;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+button {
+  display: inline-block;
+  border: none;
+  margin: 0;
+  text-decoration: none;
+  font-family: sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+  text-align: center;
+  transition: background 250ms ease-in-out, 
+              transform 150ms ease;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+ul, ol, li {
+  list-style: none;
 }

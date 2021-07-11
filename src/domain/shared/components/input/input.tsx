@@ -1,7 +1,11 @@
 import { useStyles } from './input.styles';
 
-export const Input = () => {
+interface InputProps {
+    type: string;
+}
+
+export const Input = ({ type }: InputProps) => {
     const classes = useStyles();
 
-    return <input></input>
+    return <input className={classes.inputStyle} type={type}></input>
 }
