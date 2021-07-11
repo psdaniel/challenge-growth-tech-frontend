@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { getData } from '../api/api';
 import { GetDataResponse } from '../api/api.types';
 import { Cards } from '../cards/cards';
@@ -12,9 +12,13 @@ export const Dashboard = () => {
     const [companyName, setCompanyName] = useState('');
 
     const handleClick = async () => {
-        const response = await getData(1, "Romaguera-Crona");
-        console.log(response)
+        const response = await getData(1, companyName);
         setData(response.data);
+    }
+
+    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const { target } = event;
+        setCompanyName(target.value)
     }
 
     return (
@@ -24,7 +28,7 @@ export const Dashboard = () => {
                 {data && <Cards data={data} />}
             </div>
             <div className={classes.inputComponent}>
-                <Input type="text" />
+                <Input onChange={handleChange} type="text" />
                 <Button onClick={handleClick} buttonText="Get Posts" />
             </div>
             <div className={classes.userComponent}>
