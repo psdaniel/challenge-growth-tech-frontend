@@ -4,10 +4,11 @@ import { useStyles } from './input.styles';
 interface InputProps {
     type: string;
     onChange:  React.ChangeEventHandler<HTMLInputElement>;
+    value: string;
 }
 
-export const Input = ({ type, onChange }: InputProps) => {
+export const Input = ({ type, value, onChange }: InputProps) => {
     const classes = useStyles();
 
-    return <input onChange={onChange} className={classes.inputStyle} type={type}></input>
+    return <input value={value} onChange={onChange} className={classes.inputStyle} type={type}></input>
 }

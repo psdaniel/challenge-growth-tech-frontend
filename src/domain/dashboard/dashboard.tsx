@@ -28,7 +28,7 @@ export const Dashboard = () => {
                 {data && <Cards data={data} />}
             </div>
             <div className={classes.inputComponent}>
-                <Input onChange={handleChange} type="text" />
+                <Input value={companyName} onChange={handleChange} type="text" />
                 <Button onClick={handleClick} buttonText="Get Posts" />
             </div>
             <div className={classes.userComponent}>
